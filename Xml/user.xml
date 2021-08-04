@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Firm>
+    <Customer>
+        <Name>
+            Соня
+        </Name>
+        <Mail>
+            soni273@gmail.com
+        </Mail>
+        <Service>
+            Возврат
+        </Service>
+        <Importance>
+            2
+        </Importance>
+        <Number>
+            0680899981
+        </Number>
+    </Customer>
+
+    <Executor>
+        <Name>
+            Дима
+        </Name>
+        <Date>
+            2021-07-08
+        </Date>
+        <Number>
+            0680899981
+        </Number>
+        <Price>
+            1400
+        </Price>
+    </Executor>
+
+</Firm>

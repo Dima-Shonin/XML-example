@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    function f1()
+    {
+       // обработчик кнопки
+    var but=document.getElementById("b");
+    but.addEventListener("click",
+        function(){
+                console.log("click");
+                fetch("./php.php", // URI
+                      {
+                          method: 'GET'
+                      }                          
+                )
+                .then( (response)=> {return response.text();})
+                 // после выполнения асинхронной функции
+                .then( 
+                    // callback получает результат запроса в виде параметра
+                    (data)=>{
+                        // вывод строки с содержанием XML-документа
+                        console.log(data);
+                      
+                        var parser=new window.DOMParser();
+                        // создание объектной модели документа из строки в формате "text/xml" 
+                        var doc=parser.parseFromString(data,"text/xml");
+                        var root=doc.documentElement ; // корневой элемент
+                        console.log(root);
+                        console.log(root.childNodes.length);
+                        foo(doc);
+                        
+                    } 
+                    );
+        }
+    );
+   }
+
+
+   function foo(doc)
+    {
+        var root=doc.documentElement ; // корневой элемент
+        for(let i=0;i<root.childNodes.length;i++)
+        {
+            let node=root.childNodes[i];
+            // отсекаем лишние текстовые узлы
+            if(node.nodeType!= Node.TEXT_NODE)
+            {
+                //весь узел 
+                console.log(node);
+                // имя узла
+                console.log(node.nodeName);
+                
+                // содержимое узла и всех потомков.
+                console.log(node.textContent);
+                
+                // список атрибутов
+                console.log(node.attributes);
+                
+                if(node.childNodes.length>0)
+                {
+                    console.log('вложенные элементы');
+                    for(let j=0;j<node.childNodes.length;j++)
+                    {
+                        let subNode=node.childNodes[j];
+                        // не отсечены текстовые узлы
+                        console.log(subNode);
+                    }
+                }
+                
+            }
+
+        }
+        
+        var subchik=doc.getElementById("subchik");
+        console.log(subchik);
+        
+        var tag=doc.getElementsByTagName("item")[0];
+        console.log(tag.tagName);
+        console.log("получаем атрибут",tag.getAttribute("xref"));
+        
+    }
+    </script>
+</head>
+
+<body>
+    <button id="b">Нажми</button>
+</body>
+</html>

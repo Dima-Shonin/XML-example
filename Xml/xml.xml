@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="my.xsl"?>
+
+<Academy>
+    <Auditorium>
+        <Number>
+            11
+        </Number>
+        <Floor>
+            1
+        </Floor>
+        <Seats>
+            12
+        </Seats>
+        <Specialization>
+            Design
+        </Specialization>
+        <Subnetaddress>
+            255.255.254.0
+        </Subnetaddress>
+        <Responsible>
+            Dima Shonin
+        </Responsible>
+        <Сonditioner>
+            1
+        </Сonditioner>
+        <Typeofcomputers>
+            Desktop
+        </Typeofcomputers>
+        <Monitortype>
+            IPS
+        </Monitortype>
+        <ОС>
+            Windows
+        </ОС> 
+    </Auditorium>
+
+
+    <Auditorium>
+        <Number>
+            12
+        </Number>
+        <Floor>
+            1
+        </Floor>
+        <Seats>
+            12
+        </Seats>
+        <Specialization>
+            Programmers
+        </Specialization>
+        <Subnetaddress>
+            255.255.254.1
+        </Subnetaddress>
+        <Responsible>
+           David Ivanov
+        </Responsible>
+        <Сonditioner>
+            1
+        </Сonditioner>
+        <Typeofcomputers>
+            Desktop
+        </Typeofcomputers>
+        <Monitortype>
+            TFT
+        </Monitortype>
+        <ОС>
+            Windows
+        </ОС> 
+    </Auditorium>
+
+</Academy>
+
+
